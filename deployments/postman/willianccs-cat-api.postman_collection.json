@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "e5a7708b-d34e-4bfb-b813-7b4271010e9c",
+		"name": "willianccs-cat-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:10000/all-breeds",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "zaq12wsx",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "grafana",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"extra_vars\": {\n\t\t\"project\": \"SAAS\",\n\t\t\"app_input\": \"register-statistics\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:10000/all-breeds",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"all-breeds"
+					]
+				},
+				"description": " Listar todas as raças"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10000/breeds/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "Listar as informações de uma raça"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10000/breeds/{temperament}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "zaq12wsx",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "grafana",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"extra_vars\": {\n\t\t\"project\": \"SAAS\",\n\t\t\"app_input\": \"register-statistics\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:10000/breeds/{temperament}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"breeds",
+						"{temperament}"
+					]
+				},
+				"description": "A partir de um temperamento listar as raças"
+			},
+			"response": []
+		}
+	]
+}
