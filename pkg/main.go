@@ -9,7 +9,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/gorilla/mux" 
+	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/prometheus/client_golang/prometheus"
@@ -31,7 +31,7 @@ func homePage(histogram *prometheus.HistogramVec) http.HandlerFunc {
 		code := 500
 		handler := r.RequestURI
 		method := r.Method
-		
+
 		defer func() {
 			httpDuration := time.Since(start)
 			scode := strconv.Itoa(code)
@@ -82,7 +82,7 @@ func handleRequests() {
 	myRouter.HandleFunc("/", homePage(histogram))
 	myRouter.HandleFunc("/all-breeds", returnAllBreeds(histogram))
 	myRouter.HandleFunc("/breeds/{id}", returnInfoBreed(histogram))
-	myRouter.HandleFunc("/breeds/{temperament}", returnBreedsFromTemperament(histogram))
+	myRouter.HandleFunc("/breeds/temperament/{temperament}", returnBreedsFromTemperament(histogram))
 	myRouter.Handle("/metrics", promhttp.Handler())
 	myRouter.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
@@ -109,13 +109,13 @@ func returnAllBreeds(histogram *prometheus.HistogramVec) http.HandlerFunc {
 		code := 500
 		handler := r.RequestURI
 		method := r.Method
-		
+
 		defer func() {
 			httpDuration := time.Since(start)
 			scode := strconv.Itoa(code)
 			histogram.WithLabelValues(handler, method, scode).Observe(httpDuration.Seconds())
 		}()
-			
+
 		if r.Method == "GET" {
 			code = http.StatusOK
 			breeds := []Breed{}
@@ -140,20 +140,20 @@ func returnInfoBreed(histogram *prometheus.HistogramVec) http.HandlerFunc {
 		code := 500
 		handler := r.RequestURI
 		method := r.Method
-		
+
 		defer func() {
 			httpDuration := time.Since(start)
 			scode := strconv.Itoa(code)
 			histogram.WithLabelValues(handler, method, scode).Observe(httpDuration.Seconds())
 		}()
-			
+
 		if r.Method == "GET" {
 			code = http.StatusOK
 			vars := mux.Vars(r)
 			key := vars["id"]
 			breeds := []Breed{}
 			db.Find(&breeds)
-					
+
 			for _, breed := range breeds {
 				if err == nil {
 					if breed.ID == key {
@@ -163,7 +163,7 @@ func returnInfoBreed(histogram *prometheus.HistogramVec) http.HandlerFunc {
 						w.Write([]byte(greet))
 					}
 				}
-			} 
+			}
 		} else {
 			code = http.StatusNotFound
 			w.WriteHeader(code)
@@ -179,31 +179,26 @@ func returnBreedsFromTemperament(histogram *prometheus.HistogramVec) http.Handle
 		code := 500
 		handler := r.RequestURI
 		method := r.Method
-		
+
 		defer func() {
 			httpDuration := time.Since(start)
 			scode := strconv.Itoa(code)
 			histogram.WithLabelValues(handler, method, scode).Observe(httpDuration.Seconds())
 		}()
-			
+
+		type breed struct {
+			Name string `json:"name"`
+		}
+
 		if r.Method == "GET" {
 			code = http.StatusOK
 			vars := mux.Vars(r)
 			key := vars["temperament"]
-			breeds := []Breed{}
-			db.Where("temperament LIKE (?)", "%s", key).Select("name").Find(&breeds)
-			
-			for _, breed := range breeds {
-				if err == nil {
-					if breed.Temperament == key {
-						// fmt.Println(breed)
-						fmt.Println("Endpoint Hit: Temperament:", key)
-						s := json.NewEncoder(w).Encode(breed)
-						greet := fmt.Sprintf("%s", s)
-						w.Write([]byte(greet))
-					}
-				}
-			}
+			breeds := []breed{}
+			db.Where("temperament LIKE ?", fmt.Sprintf("%%%s%%", key)).Select("name").Find(&breeds)
+
+			json.NewEncoder(w).Encode(breeds)
+
 		} else {
 			code = http.StatusNotFound
 			w.WriteHeader(code)
@@ -230,7 +225,7 @@ func main() {
 	db, err = gorm.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True", user, password, host, port, database))
 	if err!=nil{
 		log.Println("Connection Failed to Open")
-	} else { 
+	} else {
 		log.Println("Connection Established")
 	}
 	defer db.Close()
@@ -248,5 +243,5 @@ func main() {
 
 	db.AutoMigrate(&Breed{})
     handleRequests()
-	
+
 }
