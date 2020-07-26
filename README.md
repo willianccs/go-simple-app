@@ -42,6 +42,7 @@ Breeds = {
   ID: AutoID,
   name: String,
   origin: String,
+  country_code: String,
   temperament: String,
   description String,
   image: String
@@ -67,8 +68,19 @@ Returns all breeds.
 
 Returns the info about the single breed.
 
+### Fetch the breeds from temperament
+ - GET /breeds/temperament/:temperament
+
+Returns a name list of breeds from temperament.
+
+### Fetch the breeds from origin
+ - GET /breeds/origin/:country_code
+
+Returns a name list of breeds from origin.
 
 ### Architeture
+
+![Dashboard](./images/architeture.jpg)
 
 - db        (MySQL)
 - cat-init  (Golang)
@@ -183,10 +195,11 @@ mysql> show columns from breeds;
 | id          | mediumint     | NO   | PRI | NULL    | auto_increment |
 | name        | varchar(100)  | YES  |     | NULL    |                |
 | origin      | varchar(50)   | YES  |     | NULL    |                |
+| country_code| varchar(4)    | YES  |     | NULL    |                |
 | temperament | varchar(100)  | YES  |     | NULL    |                |
 | description | varchar(1000) | YES  |     | NULL    |                |
 +-------------+---------------+------+-----+---------+----------------+
-5 rows in set (0.00 sec)
+6 rows in set (0.00 sec)
 
 mysql> show columns from breeds_images;
 +-------+--------------+------+-----+---------+-------+
@@ -219,17 +232,6 @@ mysql> show columns from cats_hat;
 mysql> select * from breeds_images;
 ```
 
-## TODO  
-
-### Fetch the breeds from temperament
-- GET /breeds/:temperament
-
-### Fetch the breeds from origin
-- GET /breeds/:origin
-
-### Logging Golang -> ELK
-
-
 ## Observability images
 
 - Grafana
@@ -238,7 +240,8 @@ URL: http://localhost:3000
 User: admin
 Pass: admin
 ```
-![Dashboard](./images/dashboard_grafana.jpg)
+![Grafana 1](./images/dashboard_grafana.jpg)
+![Grafana 2](./images/dashboard_grafana.jpg)
 
 - Metrics
 ```
@@ -252,3 +255,4 @@ Elasticsearch: http://localhost:9200
 Kibana: http://localhost:5601
 Logstash + Filebeat
 ```
+![ELK](./images/dashboard_elk.jpg)

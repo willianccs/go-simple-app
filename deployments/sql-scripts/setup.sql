@@ -3,6 +3,7 @@ CREATE TABLE breeds (
     id MEDIUMINT NOT NULL AUTO_INCREMENT,
     name varchar(100),
     origin varchar(50),
+    country_code varchar(4),
     temperament  varchar(100),
     description varchar(1000),
     PRIMARY KEY (id)

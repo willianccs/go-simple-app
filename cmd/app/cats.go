@@ -18,7 +18,8 @@ type Cats struct {
     ID string `json:"id"`
     Name string `json:"name"`
 	Description string `json:"description"`
-	Origin      string `json:"origin"`
+    Origin      string `json:"origin"`
+    CountryCode string `json:"country_code"`
     Temperament string `json:"temperament"`
 }
 
@@ -60,7 +61,6 @@ func main() {
 		log.Fatal(err)
     }
     
-	// var responseObject []Cats
 	var responseObject []Cats
     json.Unmarshal([]byte(responseData), &responseObject)
     if err := json.Unmarshal([]byte(responseData), &responseObject); err != nil {
@@ -98,22 +98,20 @@ func main() {
         }
 
         // INSERT INTO DB
+        fmt.Println(val)
         // prepare
-        // fmt.Printf("prepare")
-		stmt, err := db.Prepare("INSERT INTO breeds(name,origin,temperament,description) VALUES(?,?,?,?)")
+		stmt, err := db.Prepare("INSERT INTO breeds(name,origin,country_code,temperament,description) VALUES(?,?,?,?,?)")
         if err != nil {
             log.Fatal(err)
         }
         
         //execute
-        // fmt.Printf("execute")
-        res, err := stmt.Exec(val.Name, val.Origin, val.Temperament, val.Description)
+        res, err := stmt.Exec(val.Name, val.Origin, val.CountryCode, val.Temperament, val.Description)
         if err != nil {
             log.Fatal(err)
         }
         
         id, err := res.LastInsertId()
-        // fmt.Printf("last_insertid")
         if err != nil {
             log.Fatal(err)
         }
@@ -122,7 +120,6 @@ func main() {
 		if err != nil {
             fmt.Print(err)
 		}
-        // fmt.Println("Origem:"+val.Origin+", Temperamento: "+val.Temperament+", Descrição: "+val.Description)
         defer db.Close()
 
     }

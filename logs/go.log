@@ -1,0 +1,273 @@
+INFO: 2020/07/26 10:27:49 main.go:236: Connection Established
+INFO: 2020/07/26 10:49:30 main.go:281: Connection Established
+INFO: 2020/07/26 10:50:09 main.go:133: Endpoint Hit: returnAllBreeds
+INFO: 2020/07/26 10:50:44 main.go:211: Endpoint Hit: Temperament: social
+INFO: 2020/07/26 10:51:05 main.go:211: Endpoint Hit: Temperament: bad
+INFO: 2020/07/26 10:57:42 main.go:281: Connection Established
+INFO: 2020/07/26 11:01:06 main.go:284: Connection Established
+INFO: 2020/07/26 11:01:23 main.go:213: Endpoint Hit: Temperament: bad
+INFO: 2020/07/26 11:02:39 main.go:285: Connection Established
+INFO: 2020/07/26 11:02:42 main.go:214: Endpoint Hit: Temperament: bad
+INFO: 2020/07/26 11:04:22 main.go:286: Connection Established
+INFO: 2020/07/26 11:04:25 main.go:215: Endpoint Hit: Temperament: bad
+INFO: 2020/07/26 11:04:45 main.go:215: Endpoint Hit: Temperament: social
+INFO: 2020/07/26 11:08:23 main.go:283: Connection Established
+INFO: 2020/07/26 11:08:27 main.go:212: Endpoint Hit: Temperament: social
+INFO: 2020/07/26 11:08:30 main.go:212: Endpoint Hit: Temperament: bad
+INFO: 2020/07/26 11:08:58 main.go:252: Endpoint Hit: Origin: 
+INFO: 2020/07/26 11:11:55 main.go:283: Connection Established
+INFO: 2020/07/26 11:13:02 main.go:283: Connection Established
+INFO: 2020/07/26 11:13:07 main.go:252: Endpoint Hit: Origin: %s 
+INFO: 2020/07/26 11:13:10 main.go:252: Endpoint Hit: Origin: %s 
+INFO: 2020/07/26 11:13:19 main.go:252: Endpoint Hit: Origin: %s 
+INFO: 2020/07/26 11:13:33 main.go:252: Endpoint Hit: Origin: %s 
+INFO: 2020/07/26 11:13:40 main.go:252: Endpoint Hit: Origin: %s 
+ERROR: 2020/07/26 11:25:31 main.go:282: Connection Failed to Open dial tcp 172.24.0.3:3306: connect: connection refused
+ERROR: 2020/07/26 11:26:27 main.go:282: Connection Failed to Open dial tcp 172.24.0.3:3306: connect: connection refused
+ERROR: 2020/07/26 11:27:56 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:28:06 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:28:15 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:28:23 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:28:30 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:28:38 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:28:46 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:28:57 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:29:14 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:29:43 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:30:37 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+ERROR: 2020/07/26 11:32:14 main.go:282: Connection Failed to Open dial tcp 172.25.0.2:3306: connect: connection refused
+INFO: 2020/07/26 11:32:25 main.go:284: Connection Established
+INFO: 2020/07/26 20:28:13 main.go:212: Endpoint Hit: Temperament: agil
+ERROR: 2020/07/26 20:28:27 main.go:250: <nil>
+INFO: 2020/07/26 20:32:54 main.go:284: Connection Established
+ERROR: 2020/07/26 20:32:58 main.go:250: <nil>
+INFO: 2020/07/26 20:33:15 main.go:284: Connection Established
+INFO: 2020/07/26 20:33:18 main.go:253: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:33:30 main.go:253: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:35:06 main.go:284: Connection Established
+ERROR: 2020/07/26 20:35:09 main.go:250: <nil>
+INFO: 2020/07/26 20:37:00 main.go:284: Connection Established
+INFO: 2020/07/26 20:37:22 main.go:253: Endpoint Hit: Origin:%!(EXTRA string=)
+INFO: 2020/07/26 20:37:26 main.go:253: Endpoint Hit: Origin:%!(EXTRA string=)
+INFO: 2020/07/26 20:37:28 main.go:253: Endpoint Hit: Origin:%!(EXTRA string=)
+INFO: 2020/07/26 20:41:13 main.go:284: Connection Established
+INFO: 2020/07/26 20:41:16 main.go:253: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:42:05 main.go:253: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:42:07 main.go:253: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:44:03 main.go:284: Connection Established
+INFO: 2020/07/26 20:44:06 main.go:253: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:44:48 main.go:253: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:44:59 main.go:253: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:46:10 main.go:285: Connection Established
+INFO: 2020/07/26 20:46:12 main.go:254: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:47:48 main.go:285: Connection Established
+INFO: 2020/07/26 20:47:51 main.go:254: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:48:28 main.go:285: Connection Established
+INFO: 2020/07/26 20:48:30 main.go:254: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:50:50 main.go:286: Connection Established
+INFO: 2020/07/26 20:50:52 main.go:255: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:51:19 main.go:286: Connection Established
+INFO: 2020/07/26 20:51:35 main.go:255: Endpoint Hit: Origin: 
+INFO: 2020/07/26 20:53:01 main.go:286: Connection Established
+INFO: 2020/07/26 20:53:06 main.go:255: Endpoint Hit: Origin: ru
+INFO: 2020/07/26 20:54:05 main.go:286: Connection Established
+ERROR: 2020/07/26 20:54:07 main.go:252: <nil>
+INFO: 2020/07/26 20:54:57 main.go:286: Connection Established
+ERROR: 2020/07/26 20:54:59 main.go:252: <nil>
+INFO: 2020/07/26 20:55:35 main.go:286: Connection Established
+INFO: 2020/07/26 20:55:37 main.go:255: Endpoint Hit: Origin: ru
+INFO: 2020/07/26 20:56:59 main.go:286: Connection Established
+INFO: 2020/07/26 20:57:01 main.go:255: Endpoint Hit: Origin: ru
+INFO: 2020/07/26 21:00:06 main.go:286: Connection Established
+INFO: 2020/07/26 21:02:05 main.go:286: Connection Established
+INFO: 2020/07/26 21:02:09 main.go:254: Endpoint Hit: Origin: us
+INFO: 2020/07/26 21:02:09 main.go:255: <nil>
+INFO: 2020/07/26 21:03:50 main.go:286: Connection Established
+INFO: 2020/07/26 21:03:54 main.go:254: Endpoint Hit: Origin: br
+INFO: 2020/07/26 21:04:00 main.go:254: Endpoint Hit: Origin: ca
+INFO: 2020/07/26 21:16:25 main.go:286: Connection Established
+INFO: 2020/07/26 21:16:28 main.go:254: Endpoint Hit: Origin: ca
+INFO: 2020/07/26 21:17:14 main.go:286: Connection Established
+INFO: 2020/07/26 21:17:21 main.go:254: Endpoint Hit: Origin: ch
+INFO: 2020/07/26 21:17:21 main.go:255: <nil>
+INFO: 2020/07/26 21:17:26 main.go:254: Endpoint Hit: Origin: us
+INFO: 2020/07/26 21:17:26 main.go:255: <nil>
+INFO: 2020/07/26 21:20:46 main.go:286: Connection Established
+INFO: 2020/07/26 21:20:48 main.go:254: Endpoint Hit: Origin: us
+INFO: 2020/07/26 21:20:48 main.go:255: %!s(<nil>)
+INFO: 2020/07/26 21:40:07 main.go:285: Connection Established
+INFO: 2020/07/26 21:40:12 main.go:254: Endpoint Hit: Origin: us
+INFO: 2020/07/26 21:40:26 main.go:212: Endpoint Hit: Temperament: social
+INFO: 2020/07/26 21:41:23 main.go:285: Connection Established
+INFO: 2020/07/26 22:04:04 main.go:285: Connection Established
+INFO: 2020/07/26 22:04:14 main.go:212: Endpoint Hit: Temperament: social
+INFO: 2020/07/26 22:05:28 main.go:254: Endpoint Hit: Origin: us
+INFO: 2020/07/26 22:06:07 main.go:254: Endpoint Hit: Origin: us
+INFO: 2020/07/26 22:06:24 main.go:285: Connection Established
+INFO: 2020/07/26 22:06:27 main.go:254: Endpoint Hit: Origin: us
+INFO: 2020/07/26 22:07:03 main.go:283: Connection Established
+INFO: 2020/07/26 22:13:27 main.go:163: Endpoint Hit: Breed No: 65
+WARNING: 2020/07/26 22:13:30 main.go:172: Endpoint Not Found: Breed No: 70
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 1
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 2
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 3
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 4
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 5
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 6
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 7
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 8
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 9
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 10
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 11
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 12
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 13
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 14
+INFO: 2020/07/26 22:14:02 main.go:163: Endpoint Hit: Breed No: 15
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 16
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 17
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 18
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 19
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 20
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 21
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 22
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 23
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 24
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 25
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 26
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 27
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 28
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 29
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 30
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 31
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 32
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 33
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 34
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 35
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 36
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 37
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 38
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 39
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 40
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 41
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 42
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 43
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 44
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 45
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 46
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 47
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 48
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 49
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 50
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 51
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 52
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 53
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 54
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 55
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 56
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 57
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 58
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 59
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 60
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 61
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 62
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 63
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 64
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 65
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 66
+INFO: 2020/07/26 22:14:03 main.go:163: Endpoint Hit: Breed No: 67
+WARNING: 2020/07/26 22:14:04 main.go:172: Endpoint Not Found: Breed No: 68
+WARNING: 2020/07/26 22:14:04 main.go:172: Endpoint Not Found: Breed No: 69
+WARNING: 2020/07/26 22:14:04 main.go:172: Endpoint Not Found: Breed No: 70
+INFO: 2020/07/26 22:14:23 main.go:68: Endpoint Hit: HomePage
+INFO: 2020/07/26 22:15:47 main.go:133: Endpoint Hit: returnAllBreeds
+INFO: 2020/07/26 22:15:53 main.go:133: Endpoint Hit: returnAllBreeds
+WARNING: 2020/07/26 22:16:13 main.go:176: Endpoint or Method Not Found
+INFO: 2020/07/26 22:16:25 main.go:163: Endpoint Hit: Breed No: 67
+WARNING: 2020/07/26 22:16:27 main.go:172: Endpoint Not Found: Breed No: 68
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 1
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 2
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 3
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 4
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 5
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 6
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 7
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 8
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 9
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 10
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 11
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 12
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 13
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 14
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 15
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 16
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 17
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 18
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 19
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 20
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 21
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 22
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 23
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 24
+INFO: 2020/07/26 22:33:32 main.go:163: Endpoint Hit: Breed No: 25
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 26
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 27
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 28
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 29
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 30
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 31
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 32
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 33
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 34
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 35
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 36
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 37
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 38
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 39
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 40
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 41
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 42
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 43
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 44
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 45
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 46
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 47
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 48
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 49
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 50
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 51
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 52
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 53
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 54
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 55
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 56
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 57
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 58
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 59
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 60
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 61
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 62
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 63
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 64
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 65
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 66
+INFO: 2020/07/26 22:33:33 main.go:163: Endpoint Hit: Breed No: 67
+WARNING: 2020/07/26 22:33:33 main.go:172: Endpoint Not Found: Breed No: 68
+WARNING: 2020/07/26 22:33:33 main.go:172: Endpoint Not Found: Breed No: 69
+WARNING: 2020/07/26 22:33:33 main.go:172: Endpoint Not Found: Breed No: 70
+INFO: 2020/07/26 22:33:52 main.go:212: Endpoint Hit: Temperament: agil
+INFO: 2020/07/26 22:33:57 main.go:212: Endpoint Hit: Temperament: social
+INFO: 2020/07/26 22:34:13 main.go:133: Endpoint Hit: returnAllBreeds
+INFO: 2020/07/26 22:34:22 main.go:212: Endpoint Hit: Temperament: friendly
+INFO: 2020/07/26 22:34:42 main.go:252: Endpoint Hit: Origin: br
+INFO: 2020/07/26 22:34:49 main.go:252: Endpoint Hit: Origin: ca
+INFO: 2020/07/26 22:34:54 main.go:252: Endpoint Hit: Origin: it
+INFO: 2020/07/26 22:35:01 main.go:252: Endpoint Hit: Origin: jp
+INFO: 2020/07/26 22:35:10 main.go:252: Endpoint Hit: Origin: af
+INFO: 2020/07/26 22:35:17 main.go:252: Endpoint Hit: Origin: il
+INFO: 2020/07/26 22:35:24 main.go:252: Endpoint Hit: Origin: gm
+INFO: 2020/07/26 22:35:28 main.go:252: Endpoint Hit: Origin: gmn
+INFO: 2020/07/26 22:35:42 main.go:133: Endpoint Hit: returnAllBreeds
+INFO: 2020/07/26 22:35:44 main.go:133: Endpoint Hit: returnAllBreeds
+INFO: 2020/07/26 22:35:54 main.go:133: Endpoint Hit: returnAllBreeds
+INFO: 2020/07/26 22:35:58 main.go:133: Endpoint Hit: returnAllBreeds
+INFO: 2020/07/26 22:36:09 main.go:252: Endpoint Hit: Origin: fr

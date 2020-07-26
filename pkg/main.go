@@ -14,13 +14,31 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/olivere/elastic/v7"
-	"github.com/sirupsen/logrus"
-	"gopkg.in/sohlich/elogrus.v7"
 )
 
 var db *gorm.DB
 var err error
+
+var (
+    WarningLogger *log.Logger
+    InfoLogger    *log.Logger
+    ErrorLogger   *log.Logger
+)
+
+func setupLog() {
+    file, err := os.OpenFile(logPath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    InfoLogger = log.New(file, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
+    WarningLogger = log.New(file, "WARNING: ", log.Ldate|log.Ltime|log.Lshortfile)
+    ErrorLogger = log.New(file, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
+}
+
+const (
+	logPath = "/logs/go.log"
+)
 
 func homePage(histogram *prometheus.HistogramVec) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -47,24 +65,9 @@ func homePage(histogram *prometheus.HistogramVec) http.HandlerFunc {
 		} else {
 			w.WriteHeader(code)
 		}
-    	fmt.Println("Endpoint Hit: HomePage")
+    	InfoLogger.Println("Endpoint Hit: HomePage")
 	}
 }
-
-// func myLogs() {
-// 	// Logging
-// 	os.OpenFile(logPath, os.O_RDONLY|os.O_CREATE, 0666)
-// 	c := zap.NewProductionConfig()
-// 	c.OutputPaths = []string{"stdout", logPath}
-// 	l, err := c.Build()
-// 	if err != nil {
-// 		panic(err)
-// 	}
-// }
-
-const (
-	logPath = "./logs/go.log"
-)
 
 func handleRequests() {
 	// Prometheus: Histogram to collect required metrics
@@ -83,22 +86,22 @@ func handleRequests() {
 	myRouter.HandleFunc("/all-breeds", returnAllBreeds(histogram))
 	myRouter.HandleFunc("/breeds/{id}", returnInfoBreed(histogram))
 	myRouter.HandleFunc("/breeds/temperament/{temperament}", returnBreedsFromTemperament(histogram))
+	myRouter.HandleFunc("/breeds/origin/{country_code}", returnBreedsFromOrigin(histogram))
 	myRouter.Handle("/metrics", promhttp.Handler())
-	myRouter.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-	})
-
 	//Registering the defined metric with Prometheus
 	prometheus.Register(histogram)
 
-    log.Fatal(http.ListenAndServe(":10000", myRouter))
+	er := http.ListenAndServe(":10000", myRouter)
+	if er != nil {
+		ErrorLogger.Fatal(er)
+	}
 }
 
 type Breed struct {
 	ID string `json:"id"`
 	Description string `json:"description"`
 	Origin      string `json:"origin"`
-    Temperament string `json:"temperament"`
+	Temperament string `json:"temperament"`
 }
 
 func returnAllBreeds(histogram *prometheus.HistogramVec) http.HandlerFunc {
@@ -127,7 +130,7 @@ func returnAllBreeds(histogram *prometheus.HistogramVec) http.HandlerFunc {
 		} else {
 			w.WriteHeader(code)
 		}
-		fmt.Println("Endpoint Hit: returnAllBreeds")
+		InfoLogger.Println("Endpoint Hit: returnAllBreeds")
 	}
 
 }
@@ -157,15 +160,20 @@ func returnInfoBreed(histogram *prometheus.HistogramVec) http.HandlerFunc {
 			for _, breed := range breeds {
 				if err == nil {
 					if breed.ID == key {
-						fmt.Println("Endpoint Hit: Breed No:", key)
+						InfoLogger.Println("Endpoint Hit: Breed No:", key)
 						s := json.NewEncoder(w).Encode(breed)
 						greet := fmt.Sprintf("%s", s)
 						w.Write([]byte(greet))
+						return
 					}
 				}
+
 			}
+			WarningLogger.Println("Endpoint Not Found: Breed No:", key)
+			w.WriteHeader(400)
 		} else {
-			code = http.StatusNotFound
+			code = 400
+			WarningLogger.Println("Endpoint or Method Not Found")
 			w.WriteHeader(code)
 		}
 
@@ -195,12 +203,57 @@ func returnBreedsFromTemperament(histogram *prometheus.HistogramVec) http.Handle
 			vars := mux.Vars(r)
 			key := vars["temperament"]
 			breeds := []breed{}
-			db.Where("temperament LIKE ?", fmt.Sprintf("%%%s%%", key)).Select("name").Find(&breeds)
+			stmt := db.Where("temperament LIKE ?", fmt.Sprintf("%%%s%%", key)).Select("name").Find(&breeds)
 
-			json.NewEncoder(w).Encode(breeds)
+			if stmt.Error != nil {
+				ErrorLogger.Println(err)
+			} else {
+				json.NewEncoder(w).Encode(breeds)
+				InfoLogger.Println("Endpoint Hit: Temperament:", key)
+			}
 
 		} else {
-			code = http.StatusNotFound
+			code = 400
+			WarningLogger.Println("Method Not Found. Use GET.")
+			w.WriteHeader(code)
+		}
+
+	}
+}
+
+func returnBreedsFromOrigin(histogram *prometheus.HistogramVec) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request){
+		start := time.Now()
+		defer r.Body.Close()
+		code := 500
+		handler := r.RequestURI
+		method := r.Method
+
+		defer func() {
+			httpDuration := time.Since(start)
+			scode := strconv.Itoa(code)
+			histogram.WithLabelValues(handler, method, scode).Observe(httpDuration.Seconds())
+		}()
+
+		type breed struct {
+			Name string `json:"name"`
+		}
+
+		if r.Method == "GET" {
+			code = http.StatusOK
+			vars := mux.Vars(r)
+			key := vars["country_code"]
+			breeds := []breed{}
+			stmt := db.Where("country_code = ?", key).Select("name").Find(&breeds)
+			if stmt.Error != nil {
+				ErrorLogger.Println(err)
+			} else {
+				json.NewEncoder(w).Encode(breeds)
+				InfoLogger.Println("Endpoint Hit: Origin:", key)
+			}
+		} else {
+			code = 400
+			WarningLogger.Println("Method Not Found. Use GET.")
 			w.WriteHeader(code)
 		}
 
@@ -216,6 +269,7 @@ func getEnv(key, defaultValue string) string {
 }
 
 func main() {
+	setupLog()
 	user := getEnv("MYSQL_ROOT_USER", "topcat")
 	password := getEnv("MYSQL_ROOT_PASSWORD", "Zaq!@wsx34")
 	database := getEnv("MYSQL_DATABASE", "cats")
@@ -224,22 +278,11 @@ func main() {
 
 	db, err = gorm.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True", user, password, host, port, database))
 	if err!=nil{
-		log.Println("Connection Failed to Open")
+		ErrorLogger.Fatalln("Connection Failed to Open", err)
 	} else {
-		log.Println("Connection Established")
+		InfoLogger.Println("Connection Established")
 	}
 	defer db.Close()
-
-	log := logrus.New()
-	client, err := elastic.NewClient(elastic.SetURL("http://elasticsearch:9200"))
-	if err != nil {
-		log.Panic(err)
-	}
-	hook, err := elogrus.NewAsyncElasticHook(client, "localhost", logrus.DebugLevel, "cat-api-log")
-	if err != nil {
-		log.Panic(err)
-	}
-	log.Hooks.Add(hook)
 
 	db.AutoMigrate(&Breed{})
     handleRequests()

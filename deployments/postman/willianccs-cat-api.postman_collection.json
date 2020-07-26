@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "e5a7708b-d34e-4bfb-b813-7b4271010e9c",
 		"name": "willianccs-cat-api",
+		"description": "# Apresentação\nDocumentação para utilização da Cat-Api - willianccs\n\n# Autenticação\nNão é preciso utilizar autenticação para fazer requisições nesta API\n\n# Error Codes\n\n**400 – Bad Request**\n\nDados enviados de forma incorreta ou fora do padrão",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -55,19 +56,26 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:10000/breeds/{id}",
+			"name": "http://localhost:10000/breeds/:id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "?id",
+					"query": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "Identificador único da raça"
+						}
+					]
 				},
 				"description": "Listar as informações de uma raça"
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:10000/breeds/{temperament}",
+			"name": "http://localhost:10000/breeds/temperament/:string",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -92,8 +100,8 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -101,7 +109,7 @@
 					"raw": "{\n\t\"extra_vars\": {\n\t\t\"project\": \"SAAS\",\n\t\t\"app_input\": \"register-statistics\"\n\t}\n}"
 				},
 				"url": {
-					"raw": "http://localhost:10000/breeds/{temperament}",
+					"raw": "http://localhost:10000/breeds/temperament/:temperament",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -109,12 +117,120 @@
 					"port": "10000",
 					"path": [
 						"breeds",
-						"{temperament}"
+						"temperament",
+						":temperament"
+					],
+					"variable": [
+						{
+							"key": "temperament",
+							"value": "social",
+							"description": "Uma característica da raça"
+						}
 					]
 				},
 				"description": "A partir de um temperamento listar as raças"
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:10000/breeds/temperament/:string",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "zaq12wsx",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "grafana",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"extra_vars\": {\n\t\t\"project\": \"SAAS\",\n\t\t\"app_input\": \"register-statistics\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:10000/breeds/origin/:origin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"breeds",
+						"origin",
+						":origin"
+					],
+					"variable": [
+						{
+							"key": "origin",
+							"value": "us",
+							"description": "Código do país, eg: US, CA, RU"
+						}
+					]
+				},
+				"description": "A partir de uma origem listar as raças"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "39f84284-fe02-49d0-8a61-cb55fa734e7d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "00ad0bf7-d4e0-4e86-a71a-dae38c4b261d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "044c7342-82c6-4d4e-a000-2397a81f78dc",
+			"key": "id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"id": "d2df5321-77d7-4f3c-a033-3c99e8b8c777",
+			"key": "temperament",
+			"value": "social",
+			"type": "string"
+		},
+		{
+			"id": "32272de1-a1de-402a-a657-3650d3e4f54d",
+			"key": "country_code",
+			"value": "us",
+			"type": "string"
 		}
 	]
 }

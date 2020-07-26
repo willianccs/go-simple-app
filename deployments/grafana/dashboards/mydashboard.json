@@ -176,7 +176,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "API Errors [5xx]",
+      "title": "API Errors [4xx-5xx]",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -339,5 +339,5 @@
   "timezone": "",
   "title": "API Dashboard",
   "uid": "TygSE8nMk",
-  "version": 2
+  "version": 1
 }
